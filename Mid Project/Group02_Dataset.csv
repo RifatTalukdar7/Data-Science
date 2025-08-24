@@ -1,0 +1,201 @@
+Time Spent on Website,Number of Products Viewed,Previous Purchases,Device Type,Added to Cart,Item Category,Buy Possibility
+31,19,8,Desktop,no,desktop,medium
+51,80,12,Mobile,yes,desktop,high
+36,28,13,Mobile,yes,accessories,high
+2,9,2,Desktop,no,software,not likely
+17,9,5,Tablet,no,software,low
+22,15,4,Desktop,no,software,low
+25,18,5,Desktop,yes,desktop,medium
+7,7,1,Mobile,no,laptop,not likely
+N/A,3,0,Desktop,no,laptop,not likely
+35,31,24,Mobile,yes,laptop,high
+37,16,5,Mobile,yes,laptop,medium
+3,3,2,Desktop,no,software,not likely
+6,7,1,Desktop,no,software,not likely
+22,12,6,Tablet,yes,laptop,medium
+4,10,0,Mobile,no,software,not likely
+10,10,2,N/A,no,software,not likely
+20,15,8,Desktop,yes,accessories,medium
+15,9,0,Tablet,no,desktop,not likely
+28,11,7,Tablet,yes,software,medium
+34,12,8,Tablet,yes,laptop,medium
+12,13,1,Tablet,no,software,low
+57,29,11,Mobile,yes,accessories,high
+20,10,3,Tablet,no,accessories,low
+37,11,9,Mobile,no,accessories,medium
+20,18,8,Desktop,no,accessories,medium
+38,11,5,Mobile,no,software,medium
+34,N/A,10,Tablet,no,desktop,medium
+27,15,5,Mobile,no,laptop,medium
+15,12,5,Desktop,yes,accessories,low
+14,10,5,Desktop,yes,desktop,low
+57,27,10,Tablet,yes,software,high
+43,35,9,Mobile,yes,desktop,high
+34,14,3,Mobile,no,accessories,medium
+26,11,6,Desktop,no,desktop,medium
+5,10,2,Tablet,no,accessories,not likely
+20,11,2,Mobile,yes,laptop,low
+24,10,4,Tablet,no,desktop,low
+25,7,4,Desktop,no,accessories,low
+6,7,1,Tablet,no,desktop,not likely
+36,12,7,Tablet,no,laptop,medium
+32,21,3,Tablet,no,software,medium
+10,3,1,Mobile,no,desktop,not likely
+37,29,9,Tablet,yes,software,high
+31,28,9,Desktop,yes,laptop,high
+11,7,4,Desktop,no,software,low
+5,10,1,Desktop,no,accessories,not likely
+49,36,13,Mobile,yes,software,high
+34,30,6,Desktop,yes,desktop,high
+16,10,4,Mobile,no,accessories,low
+22,19,5,Mobile,yes,laptop,medium
+11,15,5,Tablet,yes,laptop,low
+11,9,2,Mobile,no,laptop,not likely
+48,35,13,Mobile,yes,desktop,high
+N/A,N/A,4,N/A,no,desktop,low
+25,7,1,Tablet,no,accessories,low
+31,15,4,Tablet,yes,laptop,medium
+11,5,4,Desktop,yes,laptop,low
+34,16,7,Mobile,yes,laptop,medium
+11,1,2,Tablet,no,laptop,not likely
+39,15,6,Tablet,yes,accessories,medium
+2,3,0,Desktop,no,desktop,not likely
+39,23,3,Tablet,yes,laptop,medium
+31,23,11,Desktop,yes,laptop,high
+32,24,9,Desktop,yes,accessories,high
+38,35,5,Mobile,yes,laptop,high
+24,13,4,Mobile,yes,accessories,low
+47,24,7,Desktop,yes,accessories,high
+4,8,2,Mobile,no,laptop,not likely
+40,N/A,8,Tablet,no,N/A,medium
+22,10,4,Tablet,no,software,low
+30,10,6,Desktop,no,accessories,medium
+23,6,1,Desktop,no,software,low
+14,3,1,Tablet,no,software,not likely
+50,36,10,Mobile,yes,accessories,high
+10,7,2,Mobile,yes,software,low
+17,12,N/A,Mobile,yes,laptop,low
+45,29,5,Desktop,yes,software,high
+24,6,5,Desktop,yes,software,low
+20,9,2,Tablet,no,accessories,low
+14,15,5,Desktop,no,laptop,low
+42,29,11,Mobile,yes,laptop,high
+27,20,10,Tablet,yes,desktop,medium
+44,22,12,Tablet,yes,desktop,high
+15,9,1,Desktop,no,software,not likely
+3,7,0,Desktop,no,laptop,not likely
+30,14,8,Desktop,no,laptop,medium
+2,6,2,Tablet,no,desktop,not likely
+31,29,13,Desktop,yes,desktop,high
+N/A,2,1,Desktop,no,software,not likely
+33,12,10,Desktop,no,software,medium
+39,34,7,Mobile,yes,accessories,high
+22,8,1,Tablet,yes,software,low
+12,6,4,Tablet,yes,software,low
+42,22,9,Tablet,yes,desktop,high
+54,39,10,Tablet,yes,desktop,high
+8,9,1,Desktop,no,accessories,not likely
+10,5,2,Mobile,no,accessories,not likely
+33,37,12,Tablet,yes,laptop,high
+31,25,12,Desktop,yes,software,high
+22,12,5,Mobile,no,laptop,low
+45,22,11,Desktop,yes,software,high
+44,34,13,Mobile,yes,accessories,high
+20,12,3,Mobile,yes,software,low
+16,14,4,Mobile,yes,software,low
+25,5,3,Tablet,no,desktop,low
+18,7,4,Desktop,no,software,low
+48,33,5,Desktop,yes,laptop,high
+30,14,9,Desktop,no,laptop,medium
+19,7,5,Mobile,yes,N/A,low
+20,13,1,Mobile,no,software,low
+3,2,1,Mobile,no,desktop,not likely
+53,31,9,Tablet,yes,laptop,high
+9,9,1,Tablet,no,software,not likely
+14,6,2,Tablet,no,accessories,not likely
+25,22,5,Mobile,no,accessories,medium
+20,7,5,Mobile,yes,laptop,low
+33,11,5,Mobile,yes,desktop,medium
+30,34,13,Mobile,yes,accessories,high
+3,8,2,Desktop,no,desktop,not likely
+38,38,9,Tablet,yes,software,high
+31,24,5,Tablet,yes,N/A,high
+23,7,3,Desktop,yes,software,low
+9,3,0,Desktop,no,accessories,not likely
+8,2,0,Mobile,no,laptop,not likely
+57,40,12,Desktop,yes,laptop,high
+46,30,11,Desktop,yes,accessories,high
+7,2,0,Desktop,no,software,not likely
+11,14,5,Mobile,yes,accessories,low
+20,24,10,Mobile,no,desktop,medium
+30,30,11,Desktop,yes,accessories,high
+6,1,1,Tablet,no,software,not likely
+42,37,6,Mobile,yes,accessories,high
+21,23,8,Mobile,no,laptop,medium
+7,8,2,Mobile,no,accessories,not likely
+51,32,9,Desktop,yes,desktop,high
+23,11,5,Mobile,no,laptop,low
+40,22,9,Desktop,yes,accessories,high
+23,14,1,Desktop,no,accessories,low
+40,20,4,Desktop,yes,desktop,medium
+15,6,1,Desktop,no,software,low
+10,N/A,0,Mobile,N/A,accessories,not likely
+12,4,0,Desktop,no,laptop,not likely
+7,8,2,Mobile,no,desktop,not likely
+59,35,12,Desktop,yes,accessories,high
+30,10,9,Tablet,no,accessories,medium
+59,21,8,Desktop,yes,desktop,high
+60,99,9,Tablet,yes,desktop,high
+23,15,4,Tablet,no,accessories,low
+36,22,8,Mobile,yes,desktop,medium
+20,25,3,Tablet,no,software,medium
+8,2,1,Desktop,no,desktop,not likely
+8,3,0,Mobile,no,software,not likely
+31,25,7,Mobile,no,laptop,medium
+58,24,13,Tablet,yes,accessories,high
+58,40,11,Tablet,yes,laptop,high
+23,24,5,Desktop,no,software,medium
+8,10,2,Tablet,no,desktop,not likely
+17,15,4,Mobile,yes,laptop,low
+47,25,11,Tablet,yes,software,high
+31,16,7,Mobile,yes,laptop,medium
+1,4,1,Tablet,no,accessories,not likely
+25,7,4,Tablet,yes,desktop,low
+6,4,2,Tablet,no,software,not likely
+3,9,1,Tablet,no,accessories,not likely
+29,21,8,Tablet,no,desktop,medium
+20,15,4,Mobile,no,software,medium
+23,11,3,Tablet,no,software,low
+24,N/A,N/A,Tablet,N/A,desktop,medium
+14,4,1,Desktop,no,laptop,not likely
+23,24,7,Desktop,yes,desktop,medium
+51,36,5,Mobile,yes,accessories,high
+38,17,8,Mobile,yes,software,medium
+52,27,10,Desktop,yes,laptop,high
+33,11,10,Desktop,yes,software,medium
+1,1,2,Tablet,no,accessories,not likely
+4,1,2,Tablet,no,laptop,not likely
+21,11,4,Desktop,yes,laptop,low
+55,29,12,Tablet,yes,software,high
+1,2,1,Desktop,no,accessories,not likely
+8,6,0,Tablet,no,accessories,not likely
+60,37,6,Mobile,yes,software,high
+39,16,3,Mobile,no,desktop,medium
+24,10,4,Mobile,no,laptop,low
+21,6,3,Mobile,no,laptop,low
+14,6,1,Mobile,no,software,not likely
+18,15,2,Tablet,yes,desktop,low
+25,18,6,Desktop,yes,software,medium
+25,10,4,Tablet,yes,laptop,low
+31,11,4,Mobile,yes,laptop,medium
+34,25,3,Mobile,no,accessories,medium
+17,15,3,Desktop,yes,accessories,low
+12,6,0,Mobile,no,laptop,not likely
+54,25,N/A,Mobile,yes,laptop,high
+10,5,1,Desktop,no,desktop,not likely
+30,22,5,Mobile,yes,laptop,medium
+20,12,4,Tablet,yes,desktop,low
+53,32,13,Mobile,yes,desktop,high
+36,14,5,Mobile,no,accessories,medium
+3,3,2,Mobile,no,desktop,not likely
+20,7,1,Desktop,no,laptop,low
