@@ -1,0 +1,344 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Load the Dataset
+```{r}
+# Read CSV from a URL
+fullurl <- "https://drive.google.com/file/d/1xP-Q1AS4hgZT-lMtSpue--jl-RMMpITy/view?usp=sharing"
+url <- "https://drive.google.com/uc?export=download&id=1xP-Q1AS4hgZT-lMtSpue--jl-RMMpITy"
+df <- read.csv(url)
+
+# View first few rows
+head(df)
+
+```
+#Handling Missing Values
+```{r}
+# Load necessary library
+library(dplyr)
+
+df[df == "N/A"] <- NA
+
+# Check missing values
+colSums(is.na(df))
+
+# Deleting rows with missing values
+# Remove rows with more than 2 NAs
+df <- df[rowSums(is.na(df)) < 3, ]
+
+# Identify numeric and categorical columns
+numeric_cols <- sapply(df, is.numeric)
+categorical_cols <- sapply(df, is.factor) | sapply(df, is.character)
+
+# Impute numeric columns
+for (col in names(df)[numeric_cols]) {
+  if (sum(is.na(df[[col]])) > 0) {
+    
+    #Median Imputation
+    df[[col]][is.na(df[[col]])] <- median(df[[col]], na.rm = TRUE)
+  }
+}
+
+# Impute categorical columns
+for (col in names(df)[categorical_cols]) {
+  if (sum(is.na(df[[col]])) > 0) {
+    mode_value <- names(sort(table(df[[col]]), decreasing = TRUE))[1]
+    df[[col]][is.na(df[[col]])] <- mode_value
+  }
+}
+
+# Check if all missing values handled
+colSums(is.na(df))
+
+```
+```{r}
+df
+```
+
+
+# Data Type Conversion
+```{r}
+# If some columns are supposed to be categorical
+categorical_cols <- c("Device.Type", "Added.to.Cart", "Item.Category", "Buy.Possibility")
+df[categorical_cols] <- lapply(df[categorical_cols], as.factor)
+
+# If some columns are supposed to be numeric (they already are, but just in case)
+numeric_cols <- c("Time.Spent.on.Website", "Number.of.Products.Viewed", "Previous.Purchases")
+df[numeric_cols] <- lapply(df[numeric_cols], as.numeric)
+```
+
+#summary
+```{r}
+summary(df)
+```
+
+
+# Data Transformation
+```{r}
+# Define the Min-Max Scaling function
+min_max_scale <- function(x) {
+  return((x - min(x)) / (max(x) - min(x)))
+}
+
+# Columns to scale
+numeric_cols <- "Time.Spent.on.Website"
+
+# Apply Min-Max Scaling
+df[numeric_cols] <- lapply(df[numeric_cols], min_max_scale)
+
+# Check after scaling
+summary(df[numeric_cols])
+```
+
+
+# Data Exploration
+# Summary Statistics
+```{r}
+
+
+summary(df)
+```
+# Univariate Plots
+```{r}
+
+# Histogram (Distribution of Time Spent on Website)
+hist(df$Time.Spent.on.Website, 
+     main="Histogram of Time Spent on Website (in Minutes)", 
+     col="lightblue", 
+     xlab="Time Spent (Hour)", 
+     border="black")
+
+
+```
+```{r}
+# Histogram of Time Spent on Website for Buy Possibility = High
+hist(df$Time.Spent.on.Website[df$Buy.Possibility == "high"],
+     main="Histogram of Time Spent on Website (Buy Possibility = High)",
+     col="lightblue",
+     xlab="Time Spent (seconds)",
+     border="black")
+
+```
+
+
+```{r}
+# Histogram for Number of Products Viewed
+hist(df$Number.of.Products.Viewed, 
+     main="Histogram of Number of Products Viewed", 
+     col="lightgreen", 
+     xlab="Number of Products Viewed", 
+     border="black")
+
+```
+```{r}
+# Histogram of Number of Products Viewed with Buy Possibility = medium
+hist(df$Number.of.Products.Viewed[df$Buy.Possibility == "medium"],
+     main="Histogram of Number of Products Viewed (Buy Possibility = medium)",
+     col="lightgreen",
+     xlab="Number of Products Viewed (Buy Possibility = medium)",
+     border="black")
+
+```
+
+```{r}
+# Histogram for Previous Purchases
+hist(df$Previous.Purchases, 
+     main="Histogram of Previous Purchases", 
+     col="lightcoral", 
+     xlab="Previous Purchases", 
+     border="black")
+```
+```{r}
+# Histogram for Previous Purchases with Buy Possibility = low
+hist(df$Previous.Purchases[df$Buy.Possibility == "low"], 
+     main="Histogram of Previous Purchases (Buy Possibility = low)", 
+     col="lightcoral", 
+     xlab="Previous Purchases (Buy Possibility = low)", 
+     border="black")
+```
+```{r}
+# Density Plot of Time Spent on Website
+plot(density(df$Time.Spent.on.Website), 
+     main="Density Plot of Time Spent on Website", 
+     col="blue", 
+     lwd=2)
+```
+
+
+```{r}
+# Density Plot of Time Spent on Website for Buy Possibility = low
+plot(density(df$Time.Spent.on.Website[df$Buy.Possibility == "low"]), 
+     main="Density Plot of Time Spent on Website (Buy Possibility = low)", 
+     col="blue", 
+     lwd=2)
+
+```
+```{r}
+# Density Plot of Number of Products Viewed
+plot(density(df$Number.of.Products.Viewed), 
+     main="Density Plot of Number of Products Viewed", 
+     col="green", 
+     lwd=2)
+```
+
+```{r}
+# Density Plot of Previous Purchases with Buy Possibility = not likely
+plot(density(df$Previous.Purchases[df$Buy.Possibility == "not likely"]), 
+     main="Density Plot of Previous Purchases (Buy Possibility = not likely)", 
+     col="red", 
+     lwd=2)
+```
+```{r}
+# Box Plot of Time Spent on Website
+boxplot(df$Time.Spent.on.Website, 
+        main="Box Plot of Time Spent on Website", 
+        col="blue")
+```
+
+```{r}
+# Box Plot of Number of Products Viewed
+boxplot(df$Number.of.Products.Viewed, 
+        main="Box Plot of Number of Products Viewed", 
+        col="orange")
+
+```
+
+
+```{r}
+# Box Plot of Number of Products Viewed with Buy Possibility = high
+boxplot(df$Number.of.Products.Viewed[df$Buy.Possibility == "high"], 
+        main="Box Plot of Number of Products Viewed (Buy Possibility = not likely)", 
+        col="orange")
+
+```
+
+```{r}
+# Box Plot of Number of Previous Purchases
+boxplot(df$Previous.Purchases, 
+        main="Box Plot of Number of Previous Purchases", 
+        col="orange")
+```
+
+```{r}
+# Redefine numeric columns again
+numeric_cols <- sapply(df, is.numeric)
+
+# Outlier Handling: Replace outlier values with median (excluding outliers)
+
+for (col in names(df)[numeric_cols]) {
+  
+  Q1 <- quantile(df[[col]], 0.25)
+  Q3 <- quantile(df[[col]], 0.75)
+  IQR_value <- Q3 - Q1
+  
+  lower_bound <- Q1 - 1.5 * IQR_value
+  upper_bound <- Q3 + 1.5 * IQR_value
+  
+  # Identify non-outlier values
+  non_outliers <- df[[col]][df[[col]] >= lower_bound & df[[col]] <= upper_bound]
+  
+  # Calculate median without outliers
+  special_median <- median(non_outliers, na.rm = TRUE)
+  
+  # Replace outliers with the special median
+  df[[col]][df[[col]] < lower_bound | df[[col]] > upper_bound] <- special_median
+}
+
+# Final check
+summary(df)
+
+
+
+```
+```{r}
+# Box Plot of Number of Products Viewed after Handling Outliers
+boxplot(df$Number.of.Products.Viewed, 
+        main="Box Plot of Products Viewed(After Handling Outliers)", 
+        col="orange")
+```
+
+```{r}
+# Box Plot of Number of Previous Purchases after Handling Outliers
+boxplot(df$Previous.Purchases, 
+        main="Box Plot of Previous Purchases(After Handling Outliers)", 
+        col="orange")
+```
+
+
+# Exploring Categorical Data
+```{r}
+# Count of each Device Type
+table(df$Device.Type)
+```
+
+```{r}
+# Bar Plot for Device Type (Categorical)
+barplot(table(df$Device.Type), 
+        main="Bar Plot of Device Type", 
+        col=c("blue", "red", "green"), 
+        xlab="Device Type", 
+        ylab="Frequency", 
+        border="black")
+```
+```{r}
+# Bar Plot for Item Category (Categorical)
+barplot(table(df$Item.Category), 
+        main="Bar Plot of Item Category", 
+        col=c("blue", "red", "green", "yellow"), 
+        xlab="Item Category", 
+        ylab="Frequency", 
+        border="black")
+```
+
+
+```{r}
+# Bar Plot for Buy Possibility (Categorical)
+barplot(table(df$Buy.Possibility), 
+        main="Bar Plot of Buy Possibility", 
+        col=c("blue", "red"), 
+        xlab="Buy Possibility", 
+        ylab="Frequency", 
+        border="black")
+```
+
+# Multivariate Exploration
+# Scatter Plot (Numeric vs. Numeric)
+```{r}
+my_colors <- c("red", "green", "blue", "yellow")
+
+# Scatter Plot: Time Spent on Website vs Number of Products Viewed
+plot(df$Time.Spent.on.Website, df$Number.of.Products.Viewed, 
+     main="Scatter Plot of Time Spent on Website vs Number of Products Viewed",
+     xlab="Time Spent on Website", ylab="Number of Products Viewed",
+     col=my_colors[as.factor(df$Buy.Possibility)], pch=19)
+
+legend("topright", legend=levels(as.factor(df$Buy.Possibility)), 
+       col=my_colors, pch=19)
+
+```
+
+# Correlation (Numeric vs. Numeric)
+```{r}
+# Correlation between Time Spent on Website and Number of Products Viewed
+cor(df$Time.Spent.on.Website, df$Number.of.Products.Viewed)
+```
+```{r}
+# Correlation matrix
+cor(df[,1:3])
+```
+# Box Plot (Numeric vs. Categorical)
+```{r}
+# Box plot of Time Spent on Website with Buy Possibility
+boxplot(Time.Spent.on.Website ~ Buy.Possibility, data=df,
+        main="Box Plot of Time Spent on Website by Buy Possibility",
+        col=c("red", "green", "blue", "yellow"))
+```
+# Pair Plot (Multivariate Visualization)
+```{r}
+# Pair plot (Scatter plot matrix)
+my_colors <- c("red", "green", "blue", "yellow")
+pairs(df[,1:3], col=my_colors[as.factor(df$Buy.Possibility)], pch=19)
+```
+
